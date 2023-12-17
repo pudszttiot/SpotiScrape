@@ -4,7 +4,7 @@
 
 # SpotiScrape
 
-APP DESCRIPTION HERE... ex: pipReq is a Python application designed to effortlessly perform various essential operations related to Python package management, such as generating 'requirements.txt' files, checking for installed package issues, updating packages and installing from 'requirements.txt'. 
+SpotiScrape is a Python application designed for fetching and displaying detailed information about Spotify tracks using their URLs. Built with PyQt5 and Spotipy, this tool offers a user-friendly interface for exploring song details such as artist, album, track name, and artwork effortlessly
 
 ## Screenshots 
 
