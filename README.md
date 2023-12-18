@@ -28,7 +28,29 @@ Provide examples and guidelines on how to use your project.
 
 ## Features 
 
-List and describe the key features of your project. 
+- Scraping Spotify:
+  - The app utilizes the Spotipy library to interact with the Spotify API.
+  - Users can enter a valid Spotify song URL in the input field.
+  - Clicking the "Scrape" button retrieves information about the song, including the artist, album, track, and artwork.
+
+- Displaying Information:
+  - The retrieved information is displayed on the UI, including artist, album, track, and artwork.
+  - The artwork is shown as an image on the interface.
+
+- Downloading Artwork:
+  - Users can download the artwork by clicking the "Download Artwork" button.
+  - The downloaded artwork is saved as "artwork.png."
+
+- Error Handling:
+  - The app provides error handling, displaying error messages in case of invalid input or other issues.
+  - Users can copy the error message to the clipboard.
+
+- Additional Features:
+  - Instructions on how to use the application are available through the "How to Use" menu.
+  - The "Reset" button will clear the input and results.
+  - Added a "Clear" button to reset input and results.
+
+- Enhanced tooltips with custom colors
 
 ## Contributing 
 
