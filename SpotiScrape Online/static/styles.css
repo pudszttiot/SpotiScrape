@@ -1,0 +1,113 @@
+/* Your existing CSS code */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #666666;
+    background-image: url('https://raw.githubusercontent.com/pudszttiot/SpotiScrape/main/Images/SpotWallpaper6.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+img {
+    display: block;
+    margin: auto;
+}
+
+.result-container {
+            text-align: center;
+            border: 10px ridge #212121;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            animation: fade-in 1s ease-in-out;
+        }
+        
+        .result-text {
+            margin: 0;
+            font-size: 18px;
+            color: #1DB954;
+            animation: slide-up 1s ease-in-out;
+        }
+        
+        .result-text img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+        
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slide-up {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+.container {
+    max-width: 640px;
+    margin: 50px auto;
+    background-color: #191414; /* Spotify background color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+h1 {
+    color: #1DB954; /* Spotify green */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #1DB954; /* Spotify green */
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 0px;
+    border: 1px solid #1DB954; /* Spotify green */
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #1DB954; /* Spotify green */
+}
+
+button {
+    display: block; /* Ensures the button is a block-level element */
+    width: auto; /* Allows the button to size according to its content */
+    padding: 10px 20px; /* Provides internal space within the button */
+    margin: 15px auto; /* Centers the button in the container with equal top and bottom margin */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button.green {
+    background-color: #1DB954; /* Spotify green */
+    color: white;
+}
+
+button.red {
+    background-color: #e74c3c; /* Red */
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+}

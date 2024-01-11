@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpotiScrape Online</title>
+    <link rel="stylesheet" style="text/css" href="../static/styles.css">
+</head>
+
+<body>
+    <img src="https://raw.githubusercontent.com/pudszttiot/SpotiScrape/main/Images/SpotiScrapeLogo1.png"
+        width="350" height="250">
+    <label for="spotify_url">Enter Spotify URL:</label>
+    <input type="text" id="spotify_url" placeholder="https://open.spotify.com/track/track_ID">
+    <button class="green" onclick="scrapeSpotify()">Scrape</button>
+
+    <div id="result"></div>
+
+    <button class="green" onclick="downloadArtwork()">Download Artwork</button>
+    <button class="red" onclick="resetForm()">Reset</button>
+
+    <script>
+        function scrapeSpotify() {
+            var url = document.getElementById('spotify_url').value;
+
+            fetch('/scrape_spotify', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'spotify_url=' + encodeURIComponent(url),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        alert(data.error);
+                    } else {
+                        document.getElementById('result').innerHTML = `
+                            <div class="result-container">
+                                <p class="result-text">Artist: ${data.artist}</p>
+                                <p class="result-text">Album: ${data.album}</p>
+                                <p class="result-text">Track: ${data.track}</p>
+                                <img src="${data.artwork_url}" alt="Artwork">
+                            </div>
+                        `;
+                        // Update the download link with the artwork URL
+                        document.querySelector('#result img').setAttribute('data-artwork-url', data.artwork_url);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred. Please try again.');
+                });
+        }
+
+        function downloadArtwork() {
+            var artworkUrl = document.querySelector('#result img').getAttribute('data-artwork-url');
+            if (artworkUrl) {
+                window.open(artworkUrl, '_blank');
+            } else {
+                alert('No artwork available for download.');
+            }
+        }
+
+        function resetForm() {
+            document.getElementById('spotify_url').value = '';
+            document.getElementById('result').innerHTML = '';
+        }
+    </script>
+
+</body>
+
+</html>
